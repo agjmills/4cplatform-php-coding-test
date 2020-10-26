@@ -81,7 +81,7 @@ This is available from the following URL: [http://127.0.0.1:8000/telescope](http
 
 ## Postman:
 
-Public collection URL: [https://www.getpostman.com/collections/c95a7513c0c90c58ca9e](https://www.getpostman.com/collections/c95a7513c0c90c58ca9e)
+Public collection URL: [https://www.getpostman.com/collections/ee885ecdbd15801ecd98](https://www.getpostman.com/collections/ee885ecdbd15801ecd98)
 
 When selecting the collection you need to assign the following environment to it: `4C Platform Developer Test`. This allows automatic `base_url` and bearer `token` to be set.
 
