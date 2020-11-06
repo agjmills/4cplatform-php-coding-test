@@ -2,8 +2,6 @@
 
 namespace Fcp\AnimalBreedsSearch;
 
-use App\Repositories\BreedRepositoryInterface;
-use App\Repositories\Eloquent\BreedRepository as EloquentBreedRepository;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -34,7 +32,6 @@ class AnimalBreedsSearchServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/animal-breeds-search.php', 'animal-breeds-search');
-        $this->app->bind(BreedRepositoryInterface::class, EloquentBreedRepository::class);
 
         $this->app->bind('animalbreeds', function () {
             return new AnimalBreeds;
