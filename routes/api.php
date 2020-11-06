@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\{
-    AuthController,
-    UserController
-};
+use App\Http\Controllers\Api\{AuthController, BreedController, UserController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +19,6 @@ Route::post('login', [AuthController::class, 'login'])->name('user.login');
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'me'])->name('user.me');
+    Route::get('/breeds', [BreedController::class, 'search'])->name('breeds.search');
+    Route::put('/breeds/{breed}', [BreedController::class, 'update'])->name('breeds.update');
 });
