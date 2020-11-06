@@ -13,6 +13,6 @@ class SearchBreeds extends Command
 
     public function handle()
     {
-        echo print_r(AnimalBreeds::search($this->argument('type'), $this->argument('name')),1);
+        echo print_r(AnimalBreeds::search($this->argument('type'), $this->argument('name')), 1);
     }
 }

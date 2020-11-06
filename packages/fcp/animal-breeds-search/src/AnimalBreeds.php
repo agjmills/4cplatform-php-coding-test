@@ -30,6 +30,7 @@ class AnimalBreeds
     {
         if (array_key_exists($type, self::PROVIDERS)) {
             $provider = self::PROVIDERS[$type];
+
             return new $provider;
         }
 

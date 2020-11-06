@@ -13,7 +13,6 @@ class DogApi implements BreedClientInterface
 
     private string $apiKey;
 
-
     public function __construct()
     {
         $this->endpoint = config('animal-breeds-search.services.thedogapi.endpoint');
