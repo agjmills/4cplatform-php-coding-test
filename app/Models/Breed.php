@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Fcp\AnimalBreedsSearch\Facades\AnimalBreeds;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Breed extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'animal_type',
         'temperament',
