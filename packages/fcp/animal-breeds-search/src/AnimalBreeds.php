@@ -9,6 +9,11 @@ use Fcp\AnimalBreedsSearch\Providers\DogApi\DogApi;
 
 class AnimalBreeds
 {
+    const PROVIDERS = [
+        'dog' => DogApi::class,
+        'cat' => CatApi::class,
+    ];
+
     public function search(string $type, string $name): array
     {
         $client = $this->getClient($type);
@@ -16,15 +21,18 @@ class AnimalBreeds
         return $client->search($name);
     }
 
+    public function providers(): array
+    {
+        return array_keys(self::PROVIDERS);
+    }
+
     private function getClient(string $type): BreedClientInterface
     {
-        switch ($type) {
-            case 'dog':
-                return new DogApi;
-            case 'cat':
-                return new CatApi();
-            default:
-                throw new ProviderException('No provider for animal type: ' . $type);
+        if (array_key_exists($type, self::PROVIDERS)) {
+            $provider = self::PROVIDERS[$type];
+            return new $provider;
         }
+
+        throw new ProviderException('No provider for animal type: ' . $type);
     }
 }
